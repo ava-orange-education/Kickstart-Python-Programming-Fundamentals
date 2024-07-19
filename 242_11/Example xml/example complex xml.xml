@@ -1,0 +1,21 @@
+<company>
+  <employees>
+    <employee id="1">
+      <name>John Doe</name>
+      <age>30</age>
+      <skills>
+        <skill>Python</skill>
+        <skill>Data Analysis</skill>
+      </skills>
+    </employee>
+    <employee id="2">
+      <name>Jane Smith</name>
+      <age>25</age>
+      <skills>
+        <skill>JavaScript</skill>
+        <skill>Web Development</skill>
+      </skills>
+    </employee>
+  </employees>
+  <location>Silicon Valley</location>
+</company>
