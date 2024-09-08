@@ -1,0 +1,462 @@
+empty_list = [] 
+# Creating a list of integers 
+number_list = [1, 2, 3, 4, 5] 
+# Creating a list of strings 
+word_list = ["apple", "banana", "cherry"] 
+# Creating a list with mixed data types 
+mixed_list = ["hello", 100, 15.5, True]  
+# Creating a list from a string 
+string_to_list = list("hello") 
+# Creating a list from a range 
+range_to_list = list(range(5)) # This will create a list of numbers from 0 to 4 
+
+------------------------------------
+# Example list 
+fruits = ["apple", "banana", "cherry", "date"] 
+# Accessing the first item 
+first_fruit = fruits[0] # Outputs 'apple' 
+# Accessing the third item 
+third_fruit = fruits[2] # Outputs 'cherry' 
+# Accessing the last item using negative indexing 
+last_fruit = fruits[-1] # Outputs 'date' 
+
+------------------------------------------
+# Example list 
+numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] 
+# Slicing from index 2 to 5 
+sub_numbers = numbers[2:6] # Outputs [2, 3, 4, 5] 
+# Slicing with a step 
+odd_numbers = numbers[1:10:2] # Outputs [1, 3, 5, 7, 9] 
+# Omitting the start index (defaults to 0) 
+first_three = numbers[:3] # Outputs [0, 1, 2] 
+# Omitting the end index (goes until the end of the list) 
+from_four = numbers[4:] # Outputs [4, 5, 6, 7, 8, 9] 
+# Slicing with a negative step (reversing a list) 
+reversed_numbers = numbers[::-1] # Outputs [9, 8, 7, 6, 5, 4, 3, 2, 1, 0] 
+
+-----------------------------------------
+fruits = ['apple', 'banana', 'cherry'] 
+fruits.append('date') 
+# Now fruits = ['apple', 'banana', 'cherry', 'date'] 
+
+fruits.insert(1, 'blueberry') 
+# Now fruits = ['apple', 'blueberry', 'banana', 'cherry', 'date'] 
+
+more_fruits = ['elderberry', 'fig'] 
+fruits.extend(more_fruits) 
+# Now fruits = ['apple', 'blueberry', 'banana', 'cherry', 'date', 'elderberry', 'fig'] 
+
+--------------------------------------
+fruits.remove('banana') 
+# Now fruits = ['apple', 'blueberry', 'cherry', 'date', 'elderberry', 'fig'] 
+
+last_fruit = fruits.pop() # Removes and returns 'fig' 
+# Now fruits = ['apple', 'blueberry', 'cherry', 'date', 'elderberry'] 
+
+fruits.clear() 
+# Now fruits = [] 
+
+----------------------------------------
+fruits = ['apple', 'banana', 'cherry'] 
+fruits[1] = 'blackberry' 
+# Now fruits = ['apple', 'blackberry', 'cherry'] 
+
+fruits.sort() # Sorts the list alphabetically; for numbers, it sorts them numerically 
+
+fruits.reverse() 
+# Now fruits = ['cherry', 'blackberry', 'apple'] 
+
+count = fruits.count('apple') # count will be 1 
+
+---------------------------------------------
+# Initialize the list of tasks 
+tasks = [] 
+while True: 
+    # Display the menu options 
+    print("\n1. Add a task") 
+    print("2. Remove a task") 
+    print("3. Show all tasks") 
+    print("4. Exit") 
+    choice = input("Enter your choice: ") 
+    if choice == '1': 
+        # Prompt for a new task and add it to the list 
+        task = input("What task would you like to add? ") 
+        tasks.append(task) 
+        print("Task added.") 
+    elif choice == '2': 
+        # Prompt for the task to remove and attempt to remove it 
+        task = input("What task would you like to remove? ") 
+        if task in tasks: 
+            tasks.remove(task) 
+            print("Task removed.") 
+        else: print("Task not found.") 
+    elif choice == '3': 
+        # Display all current tasks 
+        print("Current Tasks:") 
+        for task in tasks: 
+            print(task) 
+    elif choice == '4': 
+        # Exit the program 
+        print("Exiting program.") 
+        break 
+    else: # Handle invalid menu options 
+        print("Invalid choice. Please choose a valid option.") 
+
+---------------------------------------------
+# A simple list of lists 
+matrix = [ [1, 2, 3], [4, 5, 6], [7, 8, 9] ] 
+# A list of lists to represent data in a small spreadsheet 
+spreadsheet = [ ["Name", "Age", "City"], ["Alice", 30, "New York"], ["Bob", 27, "Los Angeles"] ] 
+
+----------------------------------------
+# Accessing the first element of the first row in the matrix 
+first_item = matrix[0][0] # Outputs 1 
+# Accessing the city of the second person in the spreadsheet 
+city = spreadsheet[1][2] # Outputs "New York" 
+
+------------------------------------
+# Changing an element in the matrix 
+matrix[0][0] = 10 
+# Changing the age of the second person in the spreadsheet 
+spreadsheet[1][1] = 31 
+
+---------------------------------
+# List of squares of numbers from 0 to 9 
+squares = [x**2 for x in range(10)] 
+# Creating a list of lowercase strings 
+fruits = ["Apple", "Banana", "Cherry"] 
+lowercase_fruits = [fruit.lower() for fruit in fruits]  
+
+-------------------------------------
+# List of even numbers from 0 to 9 
+evens = [x for x in range(10) if x % 2 == 0] 
+# List of fruits with more than 5 letters 
+long_fruits = [fruit for fruit in fruits if len(fruit) > 5] 
+
+-------------------------------------
+# Flattening a nested list 
+nested_list = [[1, 2], [3, 4], [5, 6]] 
+flat_list = [item for sublist in nested_list for item in sublist] 
+
+-----------------------------------------
+# Creating a simple tuple 
+my_tuple = (1, 2, 3) 
+
+# Tuple packing 
+another_tuple = 'apple', 'banana', 'cherry' 
+
+# Creating a single element tuple 
+single_tuple = (4,) # The comma is required 
+
+# Creating a tuple from a list 
+list_to_tuple = tuple([5, 6, 7]) 
+# Creating a tuple from a string 
+string_to_tuple = tuple("hello") 
+
+-----------------------------------------
+# Accessing the second element of the tuple 
+item = another_tuple[1] 
+print(item) # Outputs 'banana' 
+
+# Accessing the last element of the tuple 
+last_item = another_tuple[-1] 
+print(last_item) # Outputs 'cherry' 
+
+# Slicing the tuple to get the first two elements 
+first_two = my_tuple[:2] 
+print(first_two) # Outputs (1, 2) 
+
+------------------------------------------
+date_tuple = (2022, 9, 25) 
+year = date_tuple[0] 
+day = date_tuple[2] 
+print("Year:", year) # Outputs Year: 2022 print("Day:", day) # Outputs Day: 25 
+
+-------------------------------------------
+def divmod(a, b): 
+    quotient = a // b 
+    remainder = a % b 
+    return (quotient, remainder) # Returning a tuple 
+quot, rem = divmod(10, 3) 
+print("Quotient:", quot) # Outputs Quotient: 3 print("Remainder:", rem) # Outputs Remainder: 1  
+
+---------------------------------------------
+# List to store employee tuples 
+employees = [] 
+# Function to add employee details 
+def add_employee(id, name, position, department): 
+    employee = (id, name, position, department) 
+    employees.append(employee) 
+# Function to display employee information 
+def display_employee(emp_id): 
+    for employee in employees: 
+        if employee[0] == emp_id: 
+            _, name, position, department = employee 
+            print(f"Employee Name: {name}") 
+            print(f"Position: {position}") 
+            print(f"Department: {department}") 
+            break 
+    else: 
+        print("Employee not found.") 
+# Adding employee details 
+add_employee(1, "John Doe", "Software Developer", "Technology") 
+add_employee(2, "Jane Smith", "Project Manager", "Marketing") 
+# Displaying employee details 
+display_employee(1) 
+
+-------------------------------------------------
+# Packing 
+employee = "John Doe", "Engineering", "Software Engineer" 
+
+# Unpacking 
+name, department, position = employee 
+
+--------------------------------------------------------
+from collections import namedtuple 
+# Creating a named tuple class 
+Employee = namedtuple('Employee', ['name', 'department', 'position']) 
+# Creating an instance of a named tuple 
+emp = Employee(name="Jane Smith", department="Marketing", position="Manager") 
+# Accessing elements 
+print(emp.name) # Outputs: Jane Smith
+
+-----------------------------------------------
+def get_dimensions(): 
+# Return multiple values in a tuple 
+    print('Enter width:')
+    width = input()
+    print('Enter height:')
+    height = input()
+    return (width, height) 
+dimensions = get_dimensions() 
+
+---------------------------
+def concat_strings(*args): 
+    return ' '.join(args) 
+result = concat_strings("Hello", "world", "!") # Outputs: "Hello world !" 
+
+----------------------------
+# Generating a tuple from a generator expression 
+numbers = tuple(x ** 2 for x in range(5)) # Outputs: (0, 1, 4, 9, 16) 
+
+-------------------------------
+# Creating a simple dictionary 
+my_dict = {'name': 'John', 'age': 30, 'job': 'Developer'} 
+
+# Creating a dictionary from keyword arguments 
+another_dict = dict(name="Alice", age=25, job="Designer") 
+# Creating a dictionary from pairs 
+pair_dict = dict([('name', 'Bob'), ('age', 20)]) 
+
+--------------------------------
+# Accessing the name from the dictionary 
+print(my_dict['name']) # Outputs 'John' 
+
+# Using get to avoid errors 
+print(my_dict.get('age', 'Not Specified')) # Outputs 30 
+
+--------------------------------------
+# Update dictionary with another dictionary 
+my_dict.update({'age': 31, 'city': 'New York'}) 
+print(my_dict) # Outputs {'name': 'John', 'age': 31, 'job': 'Developer', 'city': 'New York'} 
+
+-------------------------------------------
+# Example contact dictionary 
+contact_dict = {'name': 'Sarah', 'email': 'sarah@example.com', 'phone': '123-456-7890'} 
+# Accessing email 
+email = contact_dict['email'] 
+print("Email:", email) # Outputs Email: sarah@example.com 
+# Updating phone number 
+contact_dict.update({'phone': '987-654-3210'}) 
+print("Updated Phone:", contact_dict['phone']) # Outputs Updated Phone: 987-654-3210 
+
+--------------------------------------
+# Initialize the inventory dictionary 
+inventory = {} 
+# Function to add a product 
+def add_product(product_id, name, quantity, price): 
+    inventory[product_id] = {'name': name, 'quantity': quantity, 'price': price} 
+# Function to update a product 
+def update_product(product_id, name=None, quantity=None, price=None): 
+    if product_id in inventory: 
+        if name: 
+            inventory[product_id]['name'] = name 
+        if quantity: 
+            inventory[product_id]['quantity'] = quantity 
+        if price: 
+            inventory[product_id]['price'] = price 
+        else: print("Product not found.") 
+# Function to remove a product 
+def remove_product(product_id): 
+    if product_id in inventory: 
+        del inventory[product_id] 
+    else: print("Product not found.") 
+# Function to view all products 
+def view_inventory(): 
+    for product_id, details in inventory.items(): 
+        print(f"ID: {product_id}, Details: {details}") 
+
+# Adding products 
+add_product(1, "Tea", 100, 1.99) 
+add_product(2, "Coffee", 50, 2.99) 
+# Updating a product 
+update_product(1, quantity=150) 
+# Viewing inventory 
+view_inventory() 
+# Removing a product 
+remove_product(2) 
+# Viewing inventory after removal 
+view_inventory() 
+
+-------------------------------------------
+# Creating a set with curly braces 
+fruits = {'apple', 'banana', 'cherry'} 
+# Creating a set from a list using set() 
+more_fruits = set(['orange', 'melon', 'banana']) 
+
+-------------------------------------------
+fruits.add('date') 
+print(fruits) # Outputs something like {'banana', 'date', 'apple', 'cherry'}
+
+fruits.remove('banana') 
+print(fruits) # Outputs something like {'date', 'apple', 'cherry'}
+
+fruits.discard('banana') # Does nothing if 'banana' is not in the set 
+
+----------------------------------------
+# Using the | operator or union() method 
+tropical = {'pineapple', 'mango'} 
+new_set = fruits.union(tropical) 
+print(new_set) # Outputs a set containing all elements from both sets
+
+more_fruits = {'watermelon', 'banana'}
+# Using the & operator or intersection() method 
+common_fruits = fruits.intersection(more_fruits) 
+print(common_fruits) # Outputs a set of elements that appear in both sets
+
+# Using the - operator or difference() method 
+unique_fruits = fruits.difference(more_fruits) 
+print(unique_fruits) # Outputs elements that are in fruits but not in more_fruits 
+
+----------------------------------------
+last_year_members = {'John', 'Mary', 'Steve', 'Olivia'} 
+this_year_members = {'Mary', 'Steve', 'James'} 
+non_renewed_members = last_year_members.difference(this_year_members) 
+print(non_renewed_members) # Outputs {'John', 'Olivia'} 
+
+--------------------------------------
+# Set for all invited guests 
+invited = set(input("Enter invited guests (comma-separated): ").split(',')) 
+# Set for guests who RSVP'd 
+rsvped = set(input("Enter guests who RSVP'd (comma-separated): ").split(',')) 
+# Set for guests who actually attended \
+attended = set(input("Enter guests who attended (comma-separated): ").split(',')) 
+
+# Guests who RSVP'd but did not attend 
+no_shows = rsvped - attended 
+print("RSVP'd but did not attend:", no_shows) 
+
+# Guests who attended without RSVP'ing 
+unexpected_guests = attended - rsvped 
+print("Attended without RSVP:", unexpected_guests) 
+
+# Guests who RSVP'd and attended 
+confirmed_guests = rsvped & attended 
+print("RSVP'd and attended:", confirmed_guests) 
+
+--------------------------------------------
+# Define the list of favorite movies 
+favorite_movies = ['Inception', 'The Matrix', 'Interstellar'] 
+# Function to check and update movie list 
+def check_movie(movie_name): 
+    if movie_name in favorite_movies: 
+        print("That's one of my favorites too!") 
+    else: 
+        favorite_movies.append(movie_name) 
+        print("I haven't seen that one, but I'll check it out!") 
+
+# Test the function 
+check_movie('The Matrix') 
+check_movie('Avatar')
+
+---------------------------------------------
+# Define the tuple of days 
+days_of_week = ('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday') 
+# Function to check the day type 
+def check_day(day): 
+    if day in days_of_week[5:]: 
+        print("It's a weekend!") 
+    elif day in days_of_week[:5]: 
+        print("It's a weekday") 
+    else: 
+        print("Please enter a valid day of the week.") 
+# Test the function 
+check_day('Saturday') 
+check_day('Monday')
+
+----------------------------------------------
+# Define the dictionary 
+programming_languages = {'Python': 'Guido van Rossum', 'Java': 'James Gosling'} 
+# Function to get creator 
+def get_creator(language): 
+    return programming_languages.get(language, "Unknown language") 
+# Update dictionary if unknown 
+def update_language(language, creator): 
+    if get_creator(language) == "Unknown language": 
+        programming_languages[language] = creator 
+        print(f"Added {language} created by {creator} to the dictionary.") 
+    else: 
+        print(f"{language} was created by {get_creator(language)}.") 
+# Test the function 
+print(get_creator('Python')) 
+update_language('Ruby', 'Yukihiro Matsumoto')
+
+------------------------------------------
+# Define the sets 
+primes = {2, 3, 5, 7} 
+odds = {1, 3, 5, 7, 9} 
+# Union and intersection 
+union_set = primes.union(odds) 
+intersection_set = primes.intersection(odds) 
+print("Union:", union_set) 
+print("Intersection:", intersection_set)
+
+-------------------------
+# List comprehension for squares of numbers 1 through 10 
+squares = [x**2 for x in range(1, 11)] 
+odd_squares = [x for x in squares if x % 2 != 0] 
+print("Squares:", squares) 
+print("Odd Squares:", odd_squares)
+
+--------------------------------------
+# Define the list with duplicates 
+numbers = [1, 2, 3, 1, 2, 3] 
+# Convert to set to remove duplicates and back to list 
+unique_numbers = list(set(numbers)) 
+print("Unique numbers:", unique_numbers)
+
+-----------------------------------------
+# Define the dictionary 
+music_genres = {'Rock': 'Bohemian Rhapsody', 'Pop': 'Thriller', 'Jazz': 'What a Wonderful World'} 
+# Function to display songs by genre 
+def display_songs(): 
+    for genre, song in music_genres.items(): 
+        print(f"In the {genre} genre, I like {song}.") 
+# Test the function 
+display_songs()
+
+------------------------------------------
+# Define the dictionary of continents and countries 
+world = {'Asia': ['China', 'India', 'Japan'], 'Europe': ['France', 'Germany', 'Italy']} 
+# Function to display countries in a continent 
+def display_countries(continent): 
+    countries = world.get(continent, "Continent not found") 
+    if type(countries) is list: 
+        print("Countries in", continent + ":", ', '.join(countries)) 
+    else: 
+        print(countries) 
+# Test the function 
+display_countries('Asia') 
+display_countries('Africa') 
+
+----------------------------------------------
