@@ -1,0 +1,158 @@
+import subprocess
+import os
+
+def run_command(command):
+    process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    out, err = process.communicate()
+    if process.returncode == 0:
+        print(out.decode('utf-8'))
+    else:
+        print(f"Error: {err.decode('utf-8')}")
+
+if __name__ == "__main__":
+    # Create a PIP configuration file with specified settings
+    config_dir = os.path.join(os.path.expanduser("~"), ".pip")
+    os.makedirs(config_dir, exist_ok=True)
+    config_file = os.path.join(config_dir, "pip.conf")
+    
+    with open(config_file, 'w') as file:
+        file.write("[global]\n")
+        file.write("timeout = 60\n")
+        file.write("index-url = https://pypi.org/simple/\n")
+        file.write("trusted-host = pypi.org\n")
+    
+    # Print the configuration file content
+    with open(config_file, 'r') as file:
+        print(file.read())
+    
+    # Suppose you have access to a private repository, install a package from this repository using authentication
+    run_command('pip install package-name --extra-index-url https://<username>:<password>@private-repo.com/simple')
+    
+    # Update the PIP configuration file to set the private repository as the default index URL
+    with open(config_file, 'a') as file:
+        file.write("index-url = https://<username>:<password>@private-repo.com/simple\n")
+    
+    # Print the updated configuration file content
+    with open(config_file, 'r') as file:
+        print(file.read())
+
+
+-----------------------------------------------------
+
+
+import subprocess
+
+def run_command(command):
+    process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    out, err = process.communicate()
+    if process.returncode == 0:
+        print(out.decode('utf-8'))
+    else:
+        print(f"Error: {err.decode('utf-8')}")
+
+if __name__ == "__main__":
+    # Install the requests library
+    run_command('pip install requests')
+    
+    # List all installed packages
+    run_command('pip list')
+    
+    # Show details for the requests library
+    run_command('pip show requests')
+    
+    # Upgrade the requests library to the latest version
+    run_command('pip install --upgrade requests')
+    
+    # Uninstall the requests library
+    run_command('pip uninstall -y requests')
+
+
+----------------------------------------------------------
+
+import subprocess
+
+def run_command(command):
+    process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    out, err = process.communicate()
+    if process.returncode == 0:
+        print(out.decode('utf-8'))
+    else:
+        print(f"Error: {err.decode('utf-8')}")
+
+if __name__ == "__main__":
+    # Create a requirements.txt file with specified packages
+    with open('requirements.txt', 'w') as file:
+        file.write('requests==2.25.1\n')
+        file.write('numpy==1.20.0\n')
+        file.write('pandas==1.2.1\n')
+
+    # Install the packages from requirements.txt
+    run_command('pip install -r requirements.txt')
+    
+    # Freeze the currently installed packages to a new file
+    run_command('pip freeze > new_requirements.txt')
+----------------------------------------------------------------
+
+import subprocess
+
+def run_command(command):
+    process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    out, err = process.communicate()
+    if process.returncode == 0:
+        print(out.decode('utf-8'))
+    else:
+        print(f"Error: {err.decode('utf-8')}")
+
+if __name__ == "__main__":
+    # Simulate a network issue by attempting to install a package without internet access, then retries with a different mirror
+    print("Simulating network issue...")
+    run_command('pip install requests --index-url=https://pypi.org/simple/ --timeout=60')
+    
+    # Install pipdeptree and list the dependency tree
+    run_command('pip install pipdeptree')
+    run_command('pipdeptree')
+    
+    # Handle a broken installation by uninstalling and reinstalling the requests package
+    run_command('pip uninstall -y requests')
+    run_command('pip install requests')
+    
+    # Clear the PIP cache
+    run_command('pip cache purge')
+
+----------------------------------------------------------------
+import subprocess
+import os
+import shutil
+
+def run_command(command):
+    process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    out, err = process.communicate()
+    if process.returncode == 0:
+        print(out.decode('utf-8'))
+    else:
+        print(f"Error: {err.decode('utf-8')}")
+
+if __name__ == "__main__":
+    # Create a virtual environment named myenv
+    run_command('python -m venv myenv')
+    
+    # Activate the virtual environment
+    activate_command = '.\\myenv\\Scripts\\activate' if os.name == 'nt' else 'source myenv/bin/activate'
+    run_command(activate_command)
+    
+    # Install the requests package within the virtual environment
+    run_command('pip install requests')
+    
+    # Deactivate the virtual environment
+    deactivate_command = 'deactivate' if os.name != 'nt' else '.\\myenv\\Scripts\\deactivate'
+    run_command(deactivate_command)
+    
+    # Delete the myenv virtual environment
+    shutil.rmtree('myenv')
+
+--------------------------------------------------------------
+requests==2.25.1
+numpy==1.20.0
+pandas==1.2.1
+
+--------------------------------
