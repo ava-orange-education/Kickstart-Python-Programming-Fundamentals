@@ -16,4 +16,4 @@ while True:
         break 
     else: 
         new_score = int(score_input) 
-update_high_score(new_score) 
+        update_high_score(new_score) 
