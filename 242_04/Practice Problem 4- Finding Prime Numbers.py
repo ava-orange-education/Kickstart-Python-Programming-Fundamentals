@@ -14,3 +14,4 @@ for num in range(start, end + 1):
             else: 
                 # If the loop completes without finding any factors, num is prime. 
                 print(num) 
+                break
