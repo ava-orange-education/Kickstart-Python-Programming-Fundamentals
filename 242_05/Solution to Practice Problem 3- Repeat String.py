@@ -7,4 +7,6 @@ def repeat_string(s, n):
 print(repeat_string("Hi! ", 3)) # Outputs "Hi! Hi! Hi! " 
 # Testing the function with an empty string and zero repetitions. 
 print(repeat_string("", 5)) # Outputs an empty string. 
-print(repeat_string("Python ", )) # Outputs an empty string, as the repeat count is 0. 
+print(repeat_string("Python ", 0))  # Outputs: ""
+print(repeat_string("!", 5))  # Outputs: "!!!!!"
+
