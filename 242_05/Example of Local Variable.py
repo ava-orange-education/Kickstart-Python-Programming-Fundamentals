@@ -1,5 +1,7 @@
-def greet(): 
-    message = "Hello, Python!" 
-# Local variable print(message) 
-    greet() # Prints "Hello, Python!" 
-print(message) # This would raise an error since 'message' is not accessible here. 
+def greet():
+    message = "Hello, Python!"  # Local variable
+    print(message)
+
+greet()  # Outputs: Hello, Python!
+
+print(message)  # This will cause an error because 'message' is not accessible outside the function.
