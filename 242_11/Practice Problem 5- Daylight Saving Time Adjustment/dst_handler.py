@@ -7,7 +7,7 @@ def dst_handler():
     dt = datetime(2024, 11, 3, 1, 30)
     
     # Localize the time to Eastern time zone considering DST
-    dt_eastern = eastern.localize(dt, is_dst=None)
+    dt_eastern = eastern.localize(dt, is_dst=False)
     print(f"Localized time: {dt_eastern}")
 
     # Convert the localized time to UTC
