@@ -2,7 +2,7 @@
 import json
 
 # Open the JSON file
-with open('./example Json/example1.json', 'r') as file:
+with open('./example Json/Simple json file.json', 'r') as file:
     # Parse JSON data
     data = json.load(file)
 
