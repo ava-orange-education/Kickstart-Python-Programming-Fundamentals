@@ -130,7 +130,7 @@ def main():
     print(convert_to_xml_string(data_from_string))
 
     # Load XML from file
-    file_path = './example xml/example1.xml'  # Ensure this file exists with valid XML data
+    file_path = './example xml/Simple Xml Data.xml'  # Ensure this file exists with valid XML data
     data_from_file = load_xml_from_file(file_path)
     print("\nLoaded XML from file:")
     print(convert_to_xml_string(data_from_file))
