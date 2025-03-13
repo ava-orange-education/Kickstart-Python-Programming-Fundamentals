@@ -1,7 +1,7 @@
 import xml.etree.ElementTree as ET
 
 # Parse XML file
-tree = ET.parse('./example xml/example1.xml')
+tree = ET.parse('./example xml/Simple Xml Data.xml')
 root = tree.getroot()
 
 # Accessing data
