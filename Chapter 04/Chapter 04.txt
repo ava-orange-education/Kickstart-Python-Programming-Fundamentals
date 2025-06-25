@@ -1,0 +1,295 @@
+# Define the number to check 
+number = -5 
+# Check if the number is positive 
+if number > 0: 
+    print("The number is positive.") 
+# Check if the number is negative 
+if number < 0: 
+    print("The number is negative.") 
+
+-----------------------------------------
+# Ask for the user's age 
+age = int(input("Please enter your age: ")) 
+# Determine the age group 
+if age <= 12: 
+    print("You are a child.") 
+elif age <= 19: 
+    print("You are a teenager.") 
+elif age <= 64: 
+    print("You are an adult.") 
+else: 
+    print("You are a senior.") 
+
+----------------------------------------
+# Input age rating and genre from the user.
+# These inputs determine the classification and recommendations for a movie.
+age_rating = input("Enter the age rating (G, PG, PG-13, R): ")
+genre = input("Enter the genre (Action, Comedy, Drama, Documentary): ")
+
+# The first level of decision-making is based on the movie's age rating.
+# This determines the suitability of the movie for different audience ages.
+if age_rating == "G" or age_rating == "PG":
+    # Suitable for younger audiences
+    print("This movie is suitable for younger audiences.")
+    
+    # Nested decision-making: Provide more specific feedback based on the genre,
+    # tailoring the response to the type of content within the age group.
+    if genre == "Action":
+        print("Expect some mild action scenes.")
+    elif genre == "Comedy":
+        print("Prepare for laughs suitable for all ages.")
+    else:
+        # If the movie is neither action nor comedy, it's assumed to be family-friendly
+        print("A wholesome film for family viewing.")
+        
+elif age_rating == "PG-13":
+    # Suitable for teens and above, indicating slightly more mature content.
+    print("This movie is suitable for teens and above.")
+    
+    # Further nested decisions provide specific guidance on content expectations
+    # for the PG-13 category based on genre.
+    if genre == "Action":
+        print("Moderate action scenes with minimal sensitive content.")
+    elif genre == "Drama":
+        print("Mature themes with an emphasis on storytelling.")
+    else:
+        # If the genre is neither action nor drama, a general caution is provided.
+        print("Some material may not be suitable for children under 13.")
+        
+else:
+    # Indicates the movie is for adult audiences, suggesting mature or intense content.
+    print("This movie is restricted to adult audiences.")
+    
+    # Additional nested decisions offer insights on adult-oriented films based on genre.
+    if genre == "Documentary":
+        print("Insightful content with mature themes.")
+    else:
+        # Assumes all non-documentary movies rated for adults contain mature content.
+        print("Content strictly for adults.")
+
+
+--------------------------------------------
+user_name = input("Please enter your name: ") 
+print(f"Hello, {user_name}!") 
+
+-------------------------------------
+age = input("Please enter your age: ") 
+age = int(age) # Convert the input from string to integer
+
+---------------------------------------
+# The 'for' keyword initiates the loop 
+for i in range(5): 
+    # The 'range(5)' defines the sequence we're iterating over, which is [0, 1, 2, 3, 4] 
+    # 'i' is the iteration variable that holds the current item's value in the sequence 
+    print(i) # The code block executed for each item. Here it prints the current value of 'i'.  
+
+------------------------------------------
+# Define the range of numbers 
+start = 1 
+end = 10 
+# Iterate through each number in the range 
+for number in range(start, end + 1): 
+    # Calculate the square of the number 
+    square = number * number 
+    # Print the square of the number 
+    print(f"The square of {number} is {square}.")
+
+---------------------------------------------
+# Initiation: Set the starting point of the countdown 
+counter = 5 
+# While keyword initiates the loop 
+while counter > 0: # The condition to be checked before each loop iteration 
+    # Execution: The code block that executes as long as the condition is true 
+    print(counter) # This line prints the current value of 'counter' 
+    # Progression: Decrement the counter to eventually meet the loop termination condition 
+    counter -= 1 
+# Conclusion: The loop ends when the condition is false (counter is no longer greater than 0) 
+print("Countdown finished!") 
+
+--------------------------------
+import random 
+# Initialize the game 
+start, end = 1, 100 
+secret_number = random.randint(start, end) 
+guess = None 
+# Begin the guessing game loop 
+while guess != secret_number: 
+    # Get user input 
+    guess = int(input(f"Guess the number between {start} and {end}: ")) 
+    # Evaluate the guess 
+    if guess < secret_number: 
+        print("Too low, try again!") 
+    elif guess > secret_number: 
+        print("Too high, try again!") 
+    else: 
+        # The guess is correct, congratulate the user 
+        print("Congratulations! You guessed the correct number!") 
+# Game over 
+print("Thank you for playing the guessing game.") 
+
+--------------------------------------
+while True: 
+    # Presenting the menu to the user 
+    print("\nMenu:") 
+    print("1. Display a greeting message") 
+    print("2. Exit") 
+    # Getting user input 
+    choice = input("Please enter your choice (1 or 2): ") 
+    # Implementing Conditional Logic 
+    if choice == '1': 
+        #Option 1: Perform an action 
+        print("Hello, world!") 
+    elif choice == '2': 
+        # Option 2: Exit the program 
+        print("Goodbye!") 
+        break 
+    else: 
+        # Handling invalid input 
+        print("Invalid choice, please choose 1 or 2.")  
+
+--------------------------------------
+# Prompt for user input on the range of base numbers and the multiplier limit 
+start_number = int(input("Enter the start number for the multiplication tables: "))
+# User-defined range start 
+end_number = int(input("Enter the end number for the multiplication tables: ")) 
+# User-defined range end 
+max_multiplier = int(input("Enter the maximum multiplier: ")) # User-defined multiplier limit 
+# Outer loop for each base number - Demonstrating hierarchical iteration through the range of base numbers 
+for base in range(start_number, end_number + 1): 
+    print(f"\nMultiplication table for {base}:") # Formatting output for each base number's table 
+    # Nested loop for each multiplier - Managing tasks that require iterations within iterations 
+    for multiplier in range(1, max_multiplier + 1): 
+        print(f"{base} x {multiplier} = {base * multiplier}") # Performing multiplication and displaying results 
+# Indicates the completion of all multiplication tables 
+print("\nMultiplication tables complete.") 
+
+-----------------------------------------
+# Ask the user for two numbers. These will be the operands for the arithmetic operation. 
+num1 = float(input("Enter the first number: ")) 
+num2 = float(input("Enter the second number: ")) 
+# Ask the user to choose an arithmetic operation. The options are addition, subtraction, multiplication, and division. 
+operation = input("Choose the operation (+, -, *, /): ") 
+# Depending on the operation chosen by the user, perform the corresponding arithmetic operation. 
+if operation == '+': 
+    # If the user chooses addition, add num1 and num2, and display the result. 
+    print(f"{num1} + {num2} = {num1 + num2}") 
+elif operation == '-': 
+    # If subtraction is chosen, subtract num2 from num1, and display the result. 
+    print(f"{num1} - {num2} = {num1 - num2}") 
+elif operation == '*': 
+    # For multiplication, multiply num1 by num2, and display the result. 
+    print(f"{num1} * {num2} = {num1 * num2}") 
+elif operation == '/': 
+    # Before division, check if num2 is zero to avoid division by zero error. 
+    if num2 == 0: print("Error: Cannot divide by zero.") 
+    else: 
+        # If num2 is not zero, proceed with the division and display the result. 
+        print(f"{num1} / {num2} = {num1 / num2}") 
+else: 
+    # If the operation entered does not match any of the expected symbols, inform the user. 
+    print("Invalid operation selected.") 
+
+----------------------------------------
+# Request the user to specify the starting and ending numbers of a range. The program will find even numbers within this range. 
+start_range = int(input("Enter the start of the range: ")) 
+end_range = int(input("Enter the end of the range: ")) 
+# Initialize a variable to keep track of the sum of even numbers. 
+sum_even = 0 
+# Loop through each number in the user-defined range. 
+for number in range(start_range, end_range + 1): 
+    # Check if the current number is even. 
+    if number % 2 == 0: 
+        # If the number is even, add it to the sum_even variable. 
+        sum_even += number 
+        # After looping through the range, print the total sum of even numbers found.
+print(f"The sum of even numbers from {start_range} to {end_range} is {sum_even}.") 
+
+----------------------------------------
+# Define the correct password. In a real application, this might be stored more securely or checked against a database. 
+correct_password = "secret" 
+# Initialize a counter to keep track of the number of password attempts made by the user. 
+attempts = 0 
+# Start a loop that allows the user up to 3 attempts to enter the correct password. 
+while attempts < 3: 
+    # Ask the user to input their password. 
+    user_password = input("Enter password: ") 
+    # Increment the counter for each attempt made. 
+    attempts += 1 # Compare the entered password against the correct password. 
+    if user_password == correct_password: 
+        # If the password is correct, grant access and exit the loop. 
+        print("Access Granted.") 
+        break 
+    else: 
+        # If the password is incorrect, notify the user. 
+        print("Wrong password.") 
+    # After 3 failed attempts, lock the account and exit the loop. 
+        if attempts == 3: 
+            print("Account locked. Too many attempts.")
+
+---------------------------------------------------
+# Ask the user to define the range within which they want to find prime numbers. 
+start = int(input("Enter the start of the range: ")) 
+end = int(input("Enter the end of the range: ")) 
+print(f"Prime numbers between {start} and {end} are:") 
+# Loop through each number in the defined range. 
+for num in range(start, end + 1): 
+    # Only consider numbers greater than 1, as prime numbers are greater than 1. 
+    if num > 1: 
+        # Use a nested loop to try dividing the number by all smaller numbers. 
+        for i in range(2, num): 
+            # If the number is divisible by any number other than 1 and itself, it's not prime. 
+            if (num % i) == 0: 
+                break 
+            else: 
+                # If the loop completes without finding any factors, num is prime. 
+                print(num) 
+
+-------------------------------------------------
+# Get the range within which the multiplication tables are to be printed and the number to skip. 
+n = int(input("Enter the range of numbers: ")) 
+skip = int(input("Enter the number to skip: ")) 
+# Start the outer loop to iterate through each number in the range for creating their multiplication tables. 
+for base in range(1, n + 1): 
+    # If the current number is the one to skip, use continue to skip its multiplication table. 
+    if base == skip: 
+        continue 
+    print(f"Multiplication table for {base}:") 
+    # Inner loop to go through each multiplier from 1 to 10 for the current base number. 
+    for multiplier in range(1, 11): 
+        # Print the product of the current base number and the multiplier. 
+        print(f"{base} x {multiplier} = {base * multiplier}") 
+        # Print a newline after each table for better readability. 
+        print("") 
+
+--------------------------------------------------
+# Prompt the user to enter a year to check if it's a leap year. 
+year = int(input("Enter a year to check if it's a leap year: ")) 
+# Check if the year is a leap year. A year is a leap year if it's divisible by 4 but not by 100, 
+# except if it is also divisible by 400. 
+if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0): 
+    print(f"{year} is a leap year.") 
+else: print(f"{year} is not a leap year.") 
+
+-------------------------------------------------
+# Prompt the user for the number of terms in the Fibonacci sequence they wish to generate. 
+n_terms = int(input("How many terms? ")) 
+# Initialize the first two terms of the Fibonacci sequence. 
+n1, n2 = 0, 1 
+count = 0 
+# Validate the number of terms. 
+if n_terms <= 0: 
+    print("Please enter a positive integer") 
+elif n_terms == 1: 
+    # If only one term is requested, print it directly. 
+    print("Fibonacci sequence up to", n_terms, ":") 
+    print(n1) 
+else: 
+    # Generate the Fibonacci sequence for the requested number of terms. 
+    print("Fibonacci sequence:") 
+    while count < n_terms: 
+        print(n1) 
+        # Update the terms for the next iteration. 
+        nth = n1 + n2 
+        n1 = n2 
+        n2 = nth 
+        count += 1

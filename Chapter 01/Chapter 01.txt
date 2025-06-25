@@ -1,0 +1,51 @@
+python —version 
+python3 --version 
+-------------------------------
+
+sudo apt-get update 
+sudo apt-get install python3 
+----------------------------
+
+
+pip --version
+pip3 --version 
+----------------------------
+
+
+pip install requests
+pip install pandas
+-------------------------
+
+
+cd myFirstPythonProgramDirectory
+virtualenv venv
+venv\Scripts\activate
+-----------------------------
+
+
+venv/bin/activate
+-----------------------------
+
+
+print("Hello, World!") 
+----------------------------
+
+
+print("Hello, Python! My name is [Your_Name].") 
+---------------------------
+
+
+print("IDLE is Python's Integrated Development and Learning Environment.") 
+---------------------------
+
+
+mkdir PythonChallenges 
+cd PythonChallenges 
+env_challenge\Scripts\activate
+deactivate
+-------------------------
+
+
+from datetime import date
+print(f"Hello, World! My journey in Python starts today, {date.today()}.")
+

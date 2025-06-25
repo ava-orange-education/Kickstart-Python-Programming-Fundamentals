@@ -1,0 +1,13 @@
+{
+    "name": "Jane Doe",
+    "age": 30,
+    "courses": [
+        "Python",
+        "Data Science"
+    ],
+    "address": {
+        "street": "123 Main St",
+        "city": "Anytown"
+    },
+    "graduationYear": 2022
+}

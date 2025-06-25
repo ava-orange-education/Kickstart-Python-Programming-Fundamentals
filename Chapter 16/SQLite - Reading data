@@ -1,0 +1,40 @@
+import sqlite3
+# Connect to the database
+connection = sqlite3.connect('library.db')
+cursor = connection.cursor()
+# Select all records from the books table
+cursor.execute('SELECT * FROM books')
+# Fetch all the results
+books = cursor.fetchall()
+# Display the results
+for book in books:
+    print(f"ID: {book[0]}, Title: {book[1]}, Author: {book[2]}, Year: {book[3]}, Genre: {book[4]}")
+
+
+# Select only the title and author columns from the books table
+cursor.execute('SELECT title, author FROM books')
+# Fetch and display the results
+books = cursor.fetchall()
+for book in books:
+    print(f"Title: {book[0]}, Author: {book[1]}")
+
+# Select books published after 1950
+cursor.execute('SELECT title, author, publication_year FROM books WHERE publication_year > 1950')
+# Fetch and display the results
+books = cursor.fetchall()
+for book in books:
+    print(f"Title: {book[0]}, Author: {book[1]}, Year: {book[2]}")
+
+# Select books and sort them by publication year
+cursor.execute('SELECT title, author, publication_year FROM books ORDER BY publication_year ASC')
+# Fetch and display the results
+books = cursor.fetchall()
+for book in books:
+    print(f"Title: {book[0]}, Author: {book[1]}, Year: {book[2]}")
+
+
+# Close the connection
+connection.close()
+
+
+
